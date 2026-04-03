@@ -1,0 +1,8 @@
+{
+  "chat.agent.enabled": true,
+  "github.copilot.chat.codeGeneration.instructions": [
+    {
+      "text": "Use DocSpark workflow prompts when the repository is document-driven."
+    }
+  ]
+}
