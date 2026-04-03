@@ -1,0 +1,25 @@
+site_name: [COMPANY_NAME] Documentation
+site_description: Trusted operational guidance for [COMPANY_NAME]
+site_url: [SITE_URL]
+repo_url: [REPOSITORY_URL]
+docs_dir: docs
+site_dir: site
+theme:
+  name: material
+  features:
+    - navigation.indexes
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - tables
+  - toc:
+      permalink: true
+plugins:
+  - search
+nav:
+  - Home: index.md

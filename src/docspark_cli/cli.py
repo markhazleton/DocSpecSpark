@@ -69,6 +69,11 @@ COMMAND_SPECS: dict[str, dict[str, str]] = {
         "purpose": "package the updated documentation set for publication, release notes, and archival",
         "deliverable": "release-ready summary and archive guidance",
     },
+    "publish": {
+        "title": "Publish a Documentation Site",
+        "purpose": "turn the approved markdown corpus into a GitHub Pages-ready static site with a landing page, clear navigation, and links to every publishable document",
+        "deliverable": "a docs/ site structure, markdown-first generator config, and publication workflow ready for review or deployment",
+    },
     "harvest": {
         "title": "Archive Stale Artifacts",
         "purpose": "identify obsolete drafts, superseded decisions, and completed work products that should move out of the active path",
@@ -131,6 +136,9 @@ HELPER_TEMPLATES = {
     "plan-template.md": "# Document Plan\n\n## Scope\n\n## Information Architecture\n\n## Review Workflow\n\n## Risks\n\n## Rollout\n",
     "tasks-template.md": "# Document Tasks\n\n- [ ] Confirm scope\n- [ ] Gather sources\n- [ ] Draft content\n- [ ] Run review\n- [ ] Publish or merge\n",
     "checklist-template.md": "# Document Quality Checklist\n\n- [ ] Audience is explicit\n- [ ] Source of truth is identified\n- [ ] Required reviewers are listed\n- [ ] Action steps are testable\n- [ ] Ownership is clear\n",
+    "site-index-template.md": "# [COMPANY_NAME] Documentation\n\nWelcome to the central documentation hub for [COMPANY_NAME]. This landing page should orient readers quickly, route them to the right document set, and highlight the most important operational guidance first.\n\n## Start Here\n\n- [About this documentation set](about.md)\n- [Policies and standards](policies/index.md)\n- [Procedures and playbooks](procedures/index.md)\n- [Reference and forms](reference/index.md)\n\n## Featured Documents\n\n- [Primary handbook](handbook.md)\n- [Operational checklist](operations/checklist.md)\n- [Latest release notes](releases/index.md)\n\n## Document Catalog\n\nAdd a generated or maintained index of every publishable markdown document, grouped by audience or function rather than by raw folder name.\n",
+    "mkdocs-template.yml": "site_name: [COMPANY_NAME] Documentation\nsite_description: Trusted operational guidance for [COMPANY_NAME]\nsite_url: [SITE_URL]\nrepo_url: [REPOSITORY_URL]\ndocs_dir: docs\nsite_dir: site\ntheme:\n  name: material\n  features:\n    - navigation.indexes\n    - navigation.sections\n    - navigation.top\n    - search.suggest\n    - search.highlight\nmarkdown_extensions:\n  - admonition\n  - attr_list\n  - def_list\n  - tables\n  - toc:\n      permalink: true\nplugins:\n  - search\nnav:\n  - Home: index.md\n",
+    "github-pages-workflow-template.yml": "name: docspark-publish\n\non:\n  push:\n    branches: [main]\n    paths:\n      - 'docs/**'\n      - 'mkdocs.yml'\n      - '.github/workflows/docspark-publish.yml'\n  workflow_dispatch:\n\npermissions:\n  contents: read\n  pages: write\n  id-token: write\n\nconcurrency:\n  group: github-pages\n  cancel-in-progress: true\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n    environment:\n      name: github-pages\n      url: ${{ steps.deployment.outputs.page_url }}\n    steps:\n      - name: Check out repository\n        uses: actions/checkout@v4\n\n      - name: Set up Python\n        uses: actions/setup-python@v5\n        with:\n          python-version: '3.11'\n\n      - name: Install static site generator\n        run: pip install mkdocs-material\n\n      - name: Build site\n        run: mkdocs build --strict\n\n      - name: Configure Pages\n        uses: actions/configure-pages@v5\n\n      - name: Upload Pages artifact\n        uses: actions/upload-pages-artifact@v3\n        with:\n          path: site\n\n      - name: Deploy to GitHub Pages\n        id: deployment\n        uses: actions/deploy-pages@v4\n",
     "agent-file-template.md": "## Prompt Resolution\n\nResolve from personal override, then team override, then stock DocSpark command.\n\n## User Input\n\n{{input}}\n",
     "vscode-settings.json": json.dumps(
         {
@@ -156,6 +164,7 @@ SHELL_SCRIPTS = {
         "document-context.ps1": COMMON_SCRIPT_HEADER + "param()\nGet-ChildItem .documentation -Recurse -File -ErrorAction SilentlyContinue | Select-Object FullName\n",
         "review-context.ps1": COMMON_SCRIPT_HEADER + "param()\nGet-ChildItem . -Recurse -Include *.md -File | Select-Object -First 50 FullName\n",
         "release-context.ps1": COMMON_SCRIPT_HEADER + "param()\nWrite-Output 'Prepare release notes from specs, decisions, and merged docs.'\n",
+        "publish-context.ps1": COMMON_SCRIPT_HEADER + "param()\nGet-ChildItem . -Recurse -Include *.md -File -ErrorAction SilentlyContinue | Where-Object { $_.FullName -notmatch '\\\\(\\.git|\\.venv|dist|site)\\\\' } | Select-Object FullName\n",
     },
     "bash": {
         "common.sh": COMMON_SCRIPT_HEADER + "printf 'DocSpark Bash helpers loaded.\\n'\n",
@@ -166,6 +175,7 @@ SHELL_SCRIPTS = {
         "document-context.sh": COMMON_SCRIPT_HEADER + "find .documentation -type f 2>/dev/null\n",
         "review-context.sh": COMMON_SCRIPT_HEADER + "find . -name '*.md' -type f | head -n 50\n",
         "release-context.sh": COMMON_SCRIPT_HEADER + "printf 'Prepare release notes from specs, decisions, and merged docs.\\n'\n",
+        "publish-context.sh": COMMON_SCRIPT_HEADER + "find . -type f -name '*.md' ! -path './.git/*' ! -path './.venv/*' ! -path './dist/*' ! -path './site/*'\n",
     },
 }
 

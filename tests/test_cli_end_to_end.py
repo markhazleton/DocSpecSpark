@@ -19,12 +19,18 @@ def test_init_creates_docspark_layout(tmp_path: Path) -> None:
     result = runner.invoke(app, ["init", str(workspace), "--ai", "copilot", "--shell", "powershell"])
 
     assert result.exit_code == 0, result.stdout
+    assert (workspace / ".docspark" / "defaults" / "commands" / "docspark.publish.md").exists()
     assert (workspace / ".docspark" / "defaults" / "commands" / "docspark.specify.md").exists()
+    assert (workspace / ".docspark" / "templates" / "mkdocs-template.yml").exists()
+    assert (workspace / ".docspark" / "templates" / "site-index-template.md").exists()
     assert (workspace / ".docspark" / "templates" / "spec-template.md").exists()
     assert (workspace / ".docspark" / "scripts" / "powershell" / "common.ps1").exists()
+    assert (workspace / ".docspark" / "scripts" / "powershell" / "publish-context.ps1").exists()
     assert (workspace / ".documentation" / "memory" / "constitution.md").exists()
     assert (workspace / ".github" / "agents" / "docspark.specify.agent.md").exists()
+    assert (workspace / ".github" / "agents" / "docspark.publish.agent.md").exists()
     assert (workspace / ".github" / "prompts" / "docspark.specify.prompt.md").exists()
+    assert (workspace / ".github" / "prompts" / "docspark.publish.prompt.md").exists()
     assert (workspace / ".vscode" / "settings.json").exists()
     assert len(list((workspace / ".docspark" / "defaults" / "commands").glob("*.md"))) == len(stock_command_names())
 

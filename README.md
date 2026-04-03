@@ -74,6 +74,7 @@ Core workflow:
 - `/docspark.plan`
 - `/docspark.tasks`
 - `/docspark.implement`
+- `/docspark.publish`
 
 Constitution-powered workflows:
 
@@ -96,6 +97,12 @@ Quality and personalization:
 - `/docspark.archive`
 - `/docspark.upgrade`
 - `/docspark.taskstoissues`
+
+Publication scaffolding:
+
+- `templates/site-index-template.md` provides a landing-page starter for a `docs/` site.
+- `templates/mkdocs-template.yml` provides a markdown-first static-site configuration starter.
+- `templates/github-pages-workflow-template.yml` provides a GitHub Pages deployment workflow starter.
 
 ## Prerequisites
 
