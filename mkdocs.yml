@@ -1,7 +1,11 @@
 site_name: DocSpecSpark
 site_description: Document workflow toolkit derived from DevSpark
-site_url: https://docspec.makeboldspark.com
+site_url: https://markhazleton.github.io/DocSpecSpark/
 repo_url: https://github.com/markhazleton/DocSpecSpark
+copyright: >
+  <a href="https://markhazleton.github.io/DocSpecSpark/">DocSpecSpark</a> —
+  built by <a href="https://markhazleton.com">Mark Hazleton</a> ·
+  <a href="https://makeboldsolutions.com">Make Bold Solutions</a>
 docs_dir: .documentation
 site_dir: site
 theme:
