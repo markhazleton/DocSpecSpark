@@ -1,8 +1,17 @@
 # DocSpark
 
+**Live Site**: [https://docspec.makeboldspark.com](https://docspec.makeboldspark.com)
+
 DocSpark is a document AI tool derived from DevSpark.
 
 It gives AI assistants a repeatable workflow for creating, reviewing, evolving, and publishing documentation systems using plain markdown prompts plus lightweight bootstrap tooling. The product is the prompt and template set. The CLI is optional automation for installing that set into a target repository.
+
+## About
+
+DocSpecSpark gives AI assistants a repeatable, structured process for creating, reviewing, evolving, and publishing documentation systems using plain markdown prompts and lightweight bootstrap tooling. The live site is at [https://docspec.makeboldspark.com](https://docspec.makeboldspark.com).
+
+> Built by [Mark Hazleton](https://markhazleton.com) — Mark Hazleton, Solutions Architect
+> DocSpecSpark is part of the [Make Bold Spark](https://makeboldspark.com) portfolio of technical demonstrations.
 
 ## What's In This Repo
 
