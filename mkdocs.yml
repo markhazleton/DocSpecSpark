@@ -1,0 +1,34 @@
+site_name: DocSpecSpark
+site_description: Document workflow toolkit derived from DevSpark
+site_url: https://docspec.makeboldspark.com
+repo_url: https://github.com/markhazleton/DocSpecSpark
+docs_dir: .documentation
+site_dir: site
+theme:
+  name: material
+  features:
+    - navigation.indexes
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - tables
+  - toc:
+      permalink: true
+plugins:
+  - search
+nav:
+  - Home: index.md
+  - Installation: installation.md
+  - Quickstart: quickstart.md
+  - Constitution Guide: constitution-guide.md
+  - PR Review: pr-review-usage.md
+  - Site Audit: site-audit-usage.md
+  - Critic: critic-usage.md
+  - Harvest: harvest-usage.md
+  - Upgrade: upgrade.md
+  - Constitution: memory/constitution.md
