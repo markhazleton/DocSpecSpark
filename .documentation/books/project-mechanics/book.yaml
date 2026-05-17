@@ -1,0 +1,62 @@
+title: "Project Mechanics: A Practitioner's Guide"
+subtitle: "The Art, Science, and Hard-Won Lessons of Project Management"
+author: "Mark Hazleton"
+version: "1.1"
+description: "A comprehensive guide to project management methodology — from the foundational life cycle framework to governance under pressure, built from over two decades of practitioner experience."
+language: "en"
+
+output:
+  formats:
+    - epub
+    - pdf
+
+chapters:
+  # Introduction
+  - source: books/project-mechanics/chapters/00-introduction.md
+    title: "Introduction: The Mechanics Behind Every Successful Project"
+
+  # Part I: Foundations
+  - source: books/project-mechanics/chapters/01-art-and-science-of-project-management.md
+    title: "The Art and Science of Project Management"
+  - source: books/project-mechanics/chapters/02-mastering-web-project-mechanics.md
+    title: "Mastering Web Project Mechanics"
+
+  # Part II: Managing Projects
+  - source: books/project-mechanics/chapters/03-project-management-phases-principles-practice.md
+    title: "Project Management: Phases, Principles, and Practice"
+  - source: books/project-mechanics/chapters/04-from-features-to-outcomes.md
+    title: "From Features to Outcomes: Keeping Your Eye on the Prize"
+  - source: books/project-mechanics/chapters/05-sidetracked-by-sizzle.md
+    title: "Sidetracked by Sizzle: Staying Focused on True Value"
+
+  # Part III: Portfolio, Change, and Strategy
+  - source: books/project-mechanics/chapters/06-portfolio-management-and-the-pmo.md
+    title: "Portfolio Management and the PMO"
+  - source: books/project-mechanics/chapters/07-change-management.md
+    title: "Change Management: Navigating Organizational Transformation"
+  - source: books/project-mechanics/chapters/08-evolution-over-revolution.md
+    title: "Evolution over Revolution: A Pragmatic Approach"
+
+  # Part IV: People, Teams, and Leadership
+  - source: books/project-mechanics/chapters/09-project-leadership.md
+    title: "Project Leadership: Inspiring Teams and Driving Results"
+  - source: books/project-mechanics/chapters/10-conflict-management.md
+    title: "Conflict Management: Transforming Tension into Progress"
+  - source: books/project-mechanics/chapters/11-the-balanced-equation-project-team.md
+    title: "The Balanced Equation: Crafting the Perfect Project Team"
+  - source: books/project-mechanics/chapters/12-managed-transition-model.md
+    title: "The Managed Transition Model: Leadership Promotion as Power Exchange"
+
+  # Part V: Governance Under Pressure
+  - source: books/project-mechanics/chapters/13-when-the-pressure-is-on-hotfix-governance.md
+    title: "When the Pressure Is On: Late-Sprint Hotfix Governance"
+  - source: books/project-mechanics/chapters/14-accountability-and-authority.md
+    title: "Accountability and Authority: Walking the Tightrope"
+  - source: books/project-mechanics/chapters/15-hotfix-prioritization-matrix.md
+    title: "Hotfix Prioritization Matrix and Decision Framework"
+
+appendices:
+  - source: books/project-mechanics/chapters/16-project-mechanics-glossary.md
+    title: "Appendix A: Project Mechanics Glossary"
+  - source: books/project-mechanics/chapters/17-project-mechanics-history-and-evolution.md
+    title: "Appendix B: Project Mechanics — History and Evolution"

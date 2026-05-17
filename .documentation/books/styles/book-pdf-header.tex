@@ -1,0 +1,25 @@
+% Print-oriented PDF defaults for Pandoc-generated books.
+\usepackage{microtype}
+\usepackage{fancyhdr}
+\usepackage{etoolbox}
+\usepackage{setspace}
+
+\setstretch{1.06}
+\setlength{\parindent}{1.2em}
+\setlength{\parskip}{0pt}
+\raggedbottom
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\itshape\nouppercase{\leftmark}}
+\fancyhead[R]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyfoot[C]{\small\thepage}%
+  \renewcommand{\headrulewidth}{0pt}%
+}
+
+\pretocmd{\tableofcontents}{\cleardoublepage\pagenumbering{roman}}{}{}
+\apptocmd{\tableofcontents}{\cleardoublepage\pagenumbering{arabic}}{}{}

@@ -1,0 +1,111 @@
+title: "Developing with DevSpark: The Complete Guide"
+subtitle: "Specification-Driven AI Development from First Principles to Production"
+author: "Mark Hazleton"
+version: "1.0"
+description: >
+  The definitive guide to DevSpark — the open-source framework that brings
+  constitution-powered governance, specification-driven workflows, and structured
+  quality gates to any AI coding assistant. Weaves a 40-year arc of code generation
+  history through four real production specifications on a live NuGet package,
+  covering every command, every architectural choice, and every hard-won lesson
+  from months of daily use. For solo developers and teams who want AI-assisted
+  development to be repeatable, auditable, and consistently high-quality.
+language: "en"
+cover_image: "books/devspark-complete-guide/cover.png"
+
+output:
+  formats:
+    - epub
+    - pdf
+
+frontmatter:
+  - source: books/devspark-complete-guide/chapters/00-foreword.md
+    title: "Foreword: Building the Plane While Flying It"
+
+  - source: books/devspark-complete-guide/chapters/00-introduction.md
+    title: "Introduction"
+
+chapters:
+  # ── Part I: Why DevSpark Exists ───────────────────────────────────────────
+  - source: books/devspark-complete-guide/chapters/01-forty-year-arc.md
+    title: "Forty Years of Code Generation — A Pattern That Keeps Repeating"
+
+  - source: books/devspark-complete-guide/chapters/02-brownfield-blind-spot.md
+    title: "The Brownfield Blind Spot — Why I Actually Built DevSpark"
+
+  - source: books/devspark-complete-guide/chapters/02b-museumspark-pipeline-lesson.md
+    title: "The Pipeline Lesson — What MuseumSpark Taught Me About When to Use LLMs"
+    number: "2B"
+
+  # ── Part II: How DevSpark Works ────────────────────────────────────────────
+  - source: books/devspark-complete-guide/chapters/03-core-concepts.md
+    title: "Core Concepts — Constitution, Commands, and Tiers"
+
+  - source: books/devspark-complete-guide/chapters/04-installation.md
+    title: "Installation and First Steps"
+
+  - source: books/devspark-complete-guide/chapters/05-the-constitution.md
+    title: "The Project Constitution"
+
+  - source: books/devspark-complete-guide/chapters/06-right-sized-workflows.md
+    title: "Right-Sized Workflows — From Quickfix to Full Spec"
+
+  # ── Part III: DevSpark in Action — Four Specs on One Real Project ──────────
+  - source: books/devspark-complete-guide/chapters/07-webspark-intro.md
+    title: "Introducing WebSpark.HttpClientUtility — The Running Example"
+
+  - source: books/devspark-complete-guide/chapters/08-spec-001-documentation-site.md
+    title: "Spec 001 — Building the Documentation Site"
+
+  - source: books/devspark-complete-guide/chapters/09-spec-002-compiler-warnings.md
+    title: "Spec 002 — Enforcing Compiler Discipline"
+
+  - source: books/devspark-complete-guide/chapters/10-spec-003-package-split.md
+    title: "Spec 003 — Splitting the Package"
+
+  - source: books/devspark-complete-guide/chapters/11-spec-004-batch-execution.md
+    title: "Spec 004 — Adding Batch Execution"
+
+  # ── Part IV: Advanced Architecture ────────────────────────────────────────
+  - source: books/devspark-complete-guide/chapters/12-quality-gates.md
+    title: "Quality Gates — Reviews, Audits, and Risk Analysis"
+
+  - source: books/devspark-complete-guide/chapters/13-tiered-prompt-model.md
+    title: "The Tiered Prompt Model"
+
+  - source: books/devspark-complete-guide/chapters/14-autonomy-and-guardrails.md
+    title: "Autonomy and Guardrails"
+
+  - source: books/devspark-complete-guide/chapters/15-harness-runtime.md
+    title: "The Harness Runtime — Declarative Engineering Workflows"
+
+  - source: books/devspark-complete-guide/chapters/16-multi-agent-teams.md
+    title: "Multi-Agent and Multi-User Teams"
+
+  - source: books/devspark-complete-guide/chapters/17-monorepo-support.md
+    title: "Monorepo Support — Governing Multiple Applications"
+
+  # ── Part V: Living with DevSpark ──────────────────────────────────────────
+  - source: books/devspark-complete-guide/chapters/18-lifecycle-commands.md
+    title: "Lifecycle Commands — Release, Harvest, and Evolution"
+
+  - source: books/devspark-complete-guide/chapters/19-dogfooding.md
+    title: "Dogfooding — Building the Framework on Itself"
+
+  - source: books/devspark-complete-guide/chapters/20-months-later.md
+    title: "Six Months Later — What the Ledger Actually Shows"
+
+  - source: books/devspark-complete-guide/chapters/21-upgrading-and-contributing.md
+    title: "Upgrading, Extending, and Contributing"
+
+  # ── Appendices ─────────────────────────────────────────────────────────────
+
+appendices:
+  - source: books/devspark-complete-guide/chapters/appendix-a-command-reference.md
+    title: "Complete Command Reference"
+
+  - source: books/devspark-complete-guide/chapters/appendix-b-constitution-templates.md
+    title: "Constitution Templates"
+
+  - source: books/devspark-complete-guide/chapters/appendix-c-troubleshooting.md
+    title: "Troubleshooting Guide"
